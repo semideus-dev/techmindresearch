@@ -1,5 +1,8 @@
+"use client";
+
 import { Header } from "./header";
 import Image from "next/image";
+import { Tabs } from "./ui/tabs";
 import { cn } from "@/lib/utils";
 import {
   IconAdjustmentsBolt,
@@ -15,9 +18,12 @@ import {
 export function MyCampsAdmin() {
   return (
     <div className="my-10 mt-44 flex flex-col" id="mca">
-      <Header header="MyCampusAdmin" />
+      <Header header="MyCampusAdmin" link="https://www.mycampusadmin.com/" />
       <Features />
-      <div className="my-10 flex flex-col">
+      <div className="hidden md:flex">
+        <TabsDemo />
+      </div>
+      <div className="my-24 flex flex-col">
         <h1 className="text-center text-xl font-semibold md:text-3xl">
           Our Proud Partners
         </h1>
@@ -52,6 +58,97 @@ export function MyCampsAdmin() {
           />
         </div>
       </div>
+    </div>
+  );
+}
+
+export function TabsDemo() {
+  const tabs = [
+    {
+      title: "Dashboard",
+      value: "dashboard",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Dashboard</p>
+          <Image
+            src="/assets/mca/dashboard.png"
+            alt="Dashboard"
+            width={1000}
+            height={1000}
+            className="my-4 rounded-xl border-4 border-secondary"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Library",
+      value: "library",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Library Module</p>
+          <Image
+            src="/assets/mca/library.png"
+            alt="Dashboard"
+            width={1000}
+            height={1000}
+            className="my-4 rounded-xl border-4 border-secondary"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Admission",
+      value: "admission",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Admissions Module</p>
+          <Image
+            src="/assets/mca/admission.png"
+            alt="Dashboard"
+            width={1000}
+            height={1000}
+            className="my-4 rounded-xl border-4 border-secondary"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Finance",
+      value: "finance",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Finance Module</p>
+          <Image
+            src="/assets/mca/fee.png"
+            alt="Dashboard"
+            width={1000}
+            height={1000}
+            className="my-4 rounded-xl border-4 border-secondary"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Employee",
+      value: "employee",
+      content: (
+        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
+          <p>Employee Profile</p>
+          <Image
+            src="/assets/mca/employee.png"
+            alt="Dashboard"
+            width={1000}
+            height={1000}
+            className="my-4 rounded-xl border-4 border-secondary"
+          />
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <div className="b relative mx-auto flex h-[20rem] w-full max-w-5xl flex-col items-start justify-start [perspective:1000px] md:h-[40rem]">
+      <Tabs tabs={tabs} />
     </div>
   );
 }
