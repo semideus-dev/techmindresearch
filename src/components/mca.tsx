@@ -15,7 +15,7 @@ import {
 
 export function MyCampsAdmin() {
   return (
-    <div className="my-10 mt-44 flex flex-col" id="mca">
+    <div className="my-10 mt-44 flex flex-col w-[90%]" id="mca">
       <Header header="MyCampusAdmin" link="https://www.mycampusadmin.com/" />
       <Features />
       <div className="my-24 flex flex-col">

@@ -28,7 +28,7 @@ export function Products() {
       href: "https://www.mycampusadmin.com/",
     },
     {
-      title: "Research Paper Publishing",
+      title: "Publications",
       description: "Professional research paper publishing service",
       icon: BookOpen,
       features: [
@@ -42,7 +42,7 @@ export function Products() {
   ];
 
   return (
-    <section id="products">
+    <section id="products" className="w-[90%]">
       <div className="">
         <motion.div
           initial={{ opacity: 0 }}
@@ -52,12 +52,8 @@ export function Products() {
           className="mb-12 text-center"
         >
           <Header header="Our Services" />
-          <p className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base">
-            Discover our innovative solutions for educational institutions and
-            researchers
-          </p>
         </motion.div>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.title}
@@ -66,9 +62,10 @@ export function Products() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
+
               <Card className="h-full">
                 <CardHeader>
-                  <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3">
+                  <div className="mb-4 rounded-lg bg-primary/10 p-3">
                     <product.icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-xl sm:text-2xl">

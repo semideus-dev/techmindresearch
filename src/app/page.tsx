@@ -2,6 +2,7 @@ import Hero from "@/components/hero";
 import { MyCampsAdmin } from "@/components/mca";
 import Navbar from "@/components/navbar";
 import { Products } from "@/components/products";
+import { Publications } from "@/components/publications";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Products />
+      <Publications />
       <MyCampsAdmin />
     </main>
   );
