@@ -14,15 +14,13 @@ import {
   IconRouteAltLeft,
   IconTerminal2,
 } from "@tabler/icons-react";
+import { Book, Calendar, CreditCard, DollarSign, GraduationCap, School, User } from "lucide-react";
 
 export function MyCampsAdmin() {
   return (
     <div className="my-10 mt-44 flex flex-col" id="mca">
       <Header header="MyCampusAdmin" link="https://www.mycampusadmin.com/" />
       <Features />
-      <div className="hidden md:flex">
-        <TabsDemo />
-      </div>
       <div className="my-24 flex flex-col">
         <h1 className="text-center text-xl font-semibold md:text-3xl">
           Our Proud Partners
@@ -62,143 +60,56 @@ export function MyCampsAdmin() {
   );
 }
 
-export function TabsDemo() {
-  const tabs = [
-    {
-      title: "Dashboard",
-      value: "dashboard",
-      content: (
-        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
-          <p>Dashboard</p>
-          <Image
-            src="/assets/mca/dashboard.png"
-            alt="Dashboard"
-            width={1000}
-            height={1000}
-            className="my-4 rounded-xl border-4 border-secondary"
-          />
-        </div>
-      ),
-    },
-    {
-      title: "Library",
-      value: "library",
-      content: (
-        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
-          <p>Library Module</p>
-          <Image
-            src="/assets/mca/library.png"
-            alt="Dashboard"
-            width={1000}
-            height={1000}
-            className="my-4 rounded-xl border-4 border-secondary"
-          />
-        </div>
-      ),
-    },
-    {
-      title: "Admission",
-      value: "admission",
-      content: (
-        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
-          <p>Admissions Module</p>
-          <Image
-            src="/assets/mca/admission.png"
-            alt="Dashboard"
-            width={1000}
-            height={1000}
-            className="my-4 rounded-xl border-4 border-secondary"
-          />
-        </div>
-      ),
-    },
-    {
-      title: "Finance",
-      value: "finance",
-      content: (
-        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
-          <p>Finance Module</p>
-          <Image
-            src="/assets/mca/fee.png"
-            alt="Dashboard"
-            width={1000}
-            height={1000}
-            className="my-4 rounded-xl border-4 border-secondary"
-          />
-        </div>
-      ),
-    },
-    {
-      title: "Employee",
-      value: "employee",
-      content: (
-        <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-purple-700 to-violet-900 p-10 text-xl font-bold text-white md:text-4xl">
-          <p>Employee Profile</p>
-          <Image
-            src="/assets/mca/employee.png"
-            alt="Dashboard"
-            width={1000}
-            height={1000}
-            className="my-4 rounded-xl border-4 border-secondary"
-          />
-        </div>
-      ),
-    },
-  ];
-
-  return (
-    <div className="b relative mx-auto flex h-[20rem] w-full max-w-5xl flex-col items-start justify-start [perspective:1000px] md:h-[40rem]">
-      <Tabs tabs={tabs} />
-    </div>
-  );
-}
 
 export function Features() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Admission & Student Profile Module",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
+        "Oversee admissions and maintain detailed, real-time student profiles from start to finish.",
+      icon: <User />,
     },
     {
-      title: "Ease of use",
+      title: "Attendance Management System",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
-      icon: <IconEaseInOut />,
+        "Track student and faculty attendance, generate reports, and manage leave approvals.",
+      icon: <Calendar />,
     },
     {
-      title: "Pricing like no other",
+      title: "Library Management System",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-      icon: <IconCurrencyDollar />,
+        "Optimize library operations: manage inventory, loans, fees, and a user-friendly catalog.",
+      icon: <Book />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
+      title: "Digital Notice Board",
+      description:
+        "Share updates and events via a digital notice board on web or mobile for timely access.",
       icon: <IconCloud />,
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-      icon: <IconRouteAltLeft />,
-    },
-    {
-      title: "24/7 Customer Support",
+      title: "Auto ID Card Generation",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
-      icon: <IconHelp />,
+        "YAutomate personalized ID cards with photos, barcodes, and QR codes from profiles.",
+      icon: <CreditCard />,
     },
     {
-      title: "Money back guarantee",
+      title: "Fee Management System",
       description:
-        "If you donot like EveryAI, we will convince you to like us.",
-      icon: <IconAdjustmentsBolt />,
+        "Streamline fee collection with online payments, receipts, reminders, and real-time tracking.",
+      icon: <DollarSign />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
+      title: "eLearning System",
+      description:
+        "Centralize online learning with courses, assignments, quizzes, and progress tracking.",
+      icon: <School />,
+    },
+    {
+      title: "Examination Module",
+      description:
+        "Automate exams end-to-end: papers, scheduling, evaluations, results, and reports.",
+      icon: <GraduationCap />,
     },
   ];
   return (

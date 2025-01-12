@@ -20,15 +20,17 @@ export default function Hero() {
             Upgrade to Smarter ERP
           </Button>
         </Link>
-        <Button
-          effect="expandIcon"
-          size="lg"
-          icon={ArrowRight}
-          iconPlacement="right"
-          variant="outline"
-        >
-          Empower Your Publications
-        </Button>
+        <Link href="#products">
+          <Button
+            effect="expandIcon"
+            size="lg"
+            icon={ArrowRight}
+            iconPlacement="right"
+            variant="outline"
+          >
+            Empower Your Publications
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,70 +1,114 @@
-import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+"use client";
+
+import { motion } from "framer-motion";
 import {
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Building2, BookOpen } from "lucide-react";
 import { Header } from "./header";
+import Link from "next/link";
 
 export function Products() {
+  const products = [
+    {
+      title: "MyCampusAdmin",
+      description:
+        "Comprehensive ERP system trusted by over multiple institutions",
+      icon: Building2,
+      features: [
+        "Streamlined Student Management",
+        "Efficient Academic Planning",
+        "Smart Resource Allocation",
+        "Insightful Performance Analytics",
+      ],
+      href: "https://www.mycampusadmin.com/",
+    },
+    {
+      title: "Research Paper Publishing",
+      description: "Professional research paper publishing service",
+      icon: BookOpen,
+      features: [
+        "Expert Peer Review",
+        "Rigorous Format Compliance",
+        "Advanced Citation Management",
+        "Global Research Distribution",
+      ],
+      href: "https://techmindresearch.org/",
+    },
+  ];
+
   return (
-    <div
-      className="flex w-[70%] flex-col items-center justify-center md:w-full"
-      id="solutions"
-    >
-      <Header header="Our Solutions" />
-      <BentoGrid className="mx-auto max-w-4xl">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-          />
-        ))}
-      </BentoGrid>
-    </div>
+    <section id="products">
+      <div className="">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 text-center"
+        >
+          <Header header="Our Services" />
+          <p className="mx-auto max-w-2xl text-sm text-muted-foreground sm:text-base">
+            Discover our innovative solutions for educational institutions and
+            researchers
+          </p>
+        </motion.div>
+        <div className="grid gap-8 md:grid-cols-2">
+          {products.map((product, index) => (
+            <motion.div
+              key={product.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3">
+                    <product.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl sm:text-2xl">
+                    <Link
+                      href={`${product.href}`}
+                      target="_blank"
+                      className="underline-offset-4 transition-all duration-200 hover:text-primary hover:underline"
+                    >
+                      {product.title}
+                    </Link>
+                  </CardTitle>
+                  <CardDescription>{product.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm sm:text-base">
+                    {product.features.map((feature) => (
+                      <li key={feature} className="flex items-center">
+                        <svg
+                          className="mr-2 h-4 w-4 flex-shrink-0 text-primary"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
-const Skeleton = () => (
-  <div className="flex h-full min-h-[6rem] w-full flex-1 rounded-xl bg-gradient-to-br from-neutral-200 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800"></div>
-);
-const items = [
-  {
-    title: "Journal of English Language and Literature (JELL)",
-    description: "Online, bi-monthly peer-reviewed journal inviting original research and reviews.",
-    header: <Skeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "International Journal of Management Excellence (IJME)",
-    description: "Peer-reviewed management journal indexed in Thomson and Google Scholar.",
-    header: <Skeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Journal of Research in Marketing (JORM)",
-    description:
-      "Bi-monthly journal for empirical and theoretical marketing research.",
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "My Campus Admin ERP System (MCA)",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title:
-      "International Journal of Research in Business and Technology (IJRBT)",
-    description:
-      "Double-blind e-journal promoting access to quality and well-designed research.",
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
-];
