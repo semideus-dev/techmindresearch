@@ -1,12 +1,17 @@
 "use client";
 
 import { Header } from "./header";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { IconCloud } from "@tabler/icons-react";
 import {
-  IconCloud,
-} from "@tabler/icons-react";
-import { Book, Calendar, CreditCard, DollarSign, GraduationCap, School, User } from "lucide-react";
+  Book,
+  Calendar,
+  CreditCard,
+  DollarSign,
+  GraduationCap,
+  School,
+  User,
+} from "lucide-react";
 
 export function MyCampsAdmin() {
   return (
@@ -18,28 +23,28 @@ export function MyCampsAdmin() {
           Our Proud Partners
         </h1>
         <div className="my-5 flex flex-col items-center justify-center gap-16 md:flex-row">
-          <Image
+          <img
             src="/assets/sarhali.png"
             alt="Sarhali"
             width={170}
             height={170}
             className="grayscale transition-all duration-300 hover:grayscale-0"
           />
-          <Image
+          <img
             src="/assets/aimtec.png"
             alt="AIMETC"
             width={170}
             height={170}
             className="grayscale transition-all duration-300 hover:grayscale-0"
           />
-          <Image
+          <img
             src="/assets/asu.png"
             alt="ASU"
             width={170}
             height={170}
             className="grayscale transition-all duration-300 hover:grayscale-0"
           />
-          <Image
+          <img
             src="/assets/lkc-kpt.png"
             alt="LKC KPT"
             width={170}
@@ -51,7 +56,6 @@ export function MyCampsAdmin() {
     </div>
   );
 }
-
 
 export function Features() {
   const features = [
