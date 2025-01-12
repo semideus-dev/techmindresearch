@@ -2,17 +2,9 @@
 
 import { Header } from "./header";
 import Image from "next/image";
-import { Tabs } from "./ui/tabs";
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
   IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
 } from "@tabler/icons-react";
 import { Book, Calendar, CreditCard, DollarSign, GraduationCap, School, User } from "lucide-react";
 

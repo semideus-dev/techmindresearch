@@ -1,5 +1,4 @@
 import Hero from "@/components/hero";
-import { Journals } from "@/components/journals";
 import { MyCampsAdmin } from "@/components/mca";
 import Navbar from "@/components/navbar";
 import { Products } from "@/components/products";
