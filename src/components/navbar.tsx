@@ -7,11 +7,10 @@ export default function Navbar() {
         <img
           src="/assets/alt-logo.png"
           alt="Techmind Logo"
-          width={150}
+          width={100}
           height={50}
         />
         <div className="flex items-center justify-center gap-5 text-sm md:text-base">
-          <Link href="#products">Services</Link>
           <Link href="https://techmindresearch.org/" target="_blank">
             Publications
           </Link>

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center space-y-8">
+    <div className="mb-10 mt-36 flex flex-col items-center justify-center space-y-8 md:mt-24">
       <h1 className="text-center text-3xl font-medium md:text-6xl">
         Innovating <br /> <span className="text-primary">Education</span> and{" "}
         <span className="text-secondary">Research</span>
@@ -14,7 +14,7 @@ export default function Hero() {
         facilitating groundbreaking research through professional paper
         publishing services.
       </p>
-      <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+      {/* <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
         <Link href="#mca">
           <Button effect="shine" size="lg">
             Upgrade to Smarter ERP
@@ -31,7 +31,7 @@ export default function Hero() {
             Empower Your Publications
           </Button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -9,11 +9,22 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Building2, BookOpen } from "lucide-react";
-import { Header } from "./header";
 import Link from "next/link";
 
 export function Products() {
   const products = [
+    {
+      title: "Publications",
+      description: "Professional research paper publishing service",
+      icon: BookOpen,
+      features: [
+        "Expert Peer Review",
+        "Rigorous Format Compliance",
+        "Advanced Citation Management",
+        "Global Research Distribution",
+      ],
+      href: "#publications",
+    },
     {
       title: "MyCampusAdmin",
       description:
@@ -25,35 +36,14 @@ export function Products() {
         "Smart Resource Allocation",
         "Insightful Performance Analytics",
       ],
-      href: "https://www.mycampusadmin.com/",
-    },
-    {
-      title: "Publications",
-      description: "Professional research paper publishing service",
-      icon: BookOpen,
-      features: [
-        "Expert Peer Review",
-        "Rigorous Format Compliance",
-        "Advanced Citation Management",
-        "Global Research Distribution",
-      ],
-      href: "https://techmindresearch.org/",
+      href: "#mca",
     },
   ];
 
   return (
     <section id="products" className="w-[90%]">
       <div className="">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
-        >
-          <Header header="Our Services" />
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {products.map((product, index) => (
             <motion.div
               key={product.title}
@@ -62,7 +52,6 @@ export function Products() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-
               <Card className="h-full">
                 <CardHeader>
                   <div className="mb-4 rounded-lg bg-primary/10 p-3">
@@ -71,7 +60,6 @@ export function Products() {
                   <CardTitle className="text-xl sm:text-2xl">
                     <Link
                       href={`${product.href}`}
-                      target="_blank"
                       className="underline-offset-4 transition-all duration-200 hover:text-primary hover:underline"
                     >
                       {product.title}
